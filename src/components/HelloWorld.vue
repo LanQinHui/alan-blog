@@ -12,8 +12,6 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <n-button>naive-ui</n-button>
-  <n-button>naive-ui</n-button>
-  <n-button>naive-ui</n-button>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
