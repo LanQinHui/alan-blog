@@ -1,31 +1,27 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+    <app />
+  </n-config-provider> -->
+  <!-- <router-view v-show="!isLoading" v-slot="{}"></router-view> -->
+  <!-- <loading-com-vue v-show="isLoading"></loading-com-vue> -->
+  <router-view></router-view>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+<script setup lang="ts">
+import LoadingComVue from '@/components/Loading/LoadingCom.vue'; // 全局等待层
+import { defineComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+// import { openAndCloseLoadingByTime } from '@/utils/common';
+// import appStore from '@/store'
+// 
+
+// const { isLoading } = storeToRefs(appStore.useLoadingStore);
+// openAndCloseLoadingByTime(1500); // 等待动画层
+
+
+
+</script>
+
+<style>
 </style>
