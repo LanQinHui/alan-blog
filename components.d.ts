@@ -19,10 +19,5 @@ declare module '@vue/runtime-core' {
     RightMain: typeof import('./src/components/Main/RightMain/RightMain.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TButton: typeof import('tdesign-vue-next')['Button']
-    THeadMenu: typeof import('tdesign-vue-next')['HeadMenu']
-    TIcon: typeof import('tdesign-vue-next')['Icon']
-    TMenuItem: typeof import('tdesign-vue-next')['MenuItem']
-    TSubmenu: typeof import('tdesign-vue-next')['Submenu']
   }
 }

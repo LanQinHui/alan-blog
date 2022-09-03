@@ -5,7 +5,11 @@
     <!--导航栏-->
     <NavBar/>
     <!-- 头部标题 -->
-    <Header></Header>
+    <Header>
+      <template v-slot:title>
+        首页
+      </template>
+    </Header>
     <!-- 主题部分内容 -->
     <!-- <Main></Main> -->
     <LeftMain/>
