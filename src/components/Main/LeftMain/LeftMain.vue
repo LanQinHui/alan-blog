@@ -28,12 +28,12 @@
             <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." class="w-full h-full object-center object-cover">
           </div>
           <h3 class="mt-6 text-sm text-gray-500">
-            <a href="#">
+            <router-link :to="{name:'Detailspage'}">
               <span class="absolute inset-0"></span>
-              Desk and Office
-            </a>
+              Vue3 版本全新发布~
+            </router-link>
           </h3>
-          <p class="text-base font-semibold text-gray-900">Work from home accessories</p>
+          <p class="text-base font-semibold text-gray-900">戳我查看详情</p>
         </div>
 
         <div class="group relative transform hover:scale-105 transition mb-8">

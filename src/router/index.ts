@@ -6,6 +6,8 @@ const OOTab = () => import('@/views/OOTab/index.vue')
 const ServerTab = () => import('@/views/ServerTab/index.vue')
 const TakeNotesTab = () => import('@/views/TakeNotesTab/index.vue')
 const DevelopmentPlatformTab = () => import('@/views/DevelopmentPlatformTab/index.vue')
+const Detailspage = () => import('@/views/Detailspage/index.vue')
+
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -67,6 +69,17 @@ const routes: Array<RouteRecordRaw> = [
       requireAuth: true
     },
     component: DevelopmentPlatformTab
+  },
+  ,
+  {
+    path: '/details',
+    name: 'Detailspage',
+    meta: {
+      title: '文章详情',
+      keepAlive: true,
+      requireAuth: true
+    },
+    component: Detailspage
   },
 ];
 
