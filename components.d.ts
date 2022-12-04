@@ -7,7 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Comment: typeof import('./src/components/Comment/Comment.vue')['default']
+    CommentBox: typeof import('./src/components/Comment/CommentBox.vue')['default']
+    CommentItem: typeof import('./src/components/Comment/CommentItem.vue')['default']
     Content: typeof import('./src/components/Content/Content.vue')['default']
+    DividerHorizontal: typeof import('./src/components/Comment/DividerHorizontal.vue')['default']
     Footer: typeof import('./src/components/Footer/Footer.vue')['default']
     Header: typeof import('./src/components/Header/Header.vue')['default']
     LeftMain: typeof import('./src/components/Main/LeftMain/LeftMain.vue')['default']
@@ -16,6 +20,8 @@ declare module '@vue/runtime-core' {
     NavBar: typeof import('./src/components/NavBar/NavBar.vue')['default']
     NavBarMsg: typeof import('./src/components/NavBar/NavBarMsg.vue')['default']
     Pagination: typeof import('./src/components/Pagination/Pagination.vue')['default']
+    ReplayBox: typeof import('./src/components/Comment/ReplayBox.vue')['default']
+    ReplyContainer: typeof import('./src/components/Comment/ReplyContainer.vue')['default']
     RightMain: typeof import('./src/components/Main/RightMain/RightMain.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

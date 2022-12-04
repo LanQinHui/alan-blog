@@ -37,18 +37,19 @@
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link :to="{name:'Home'}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">首页</router-link>
+            <!-- <router-link :to="{name:'Home'}" active-class="bg-gray-900 text-white" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">首页</router-link> -->
+            <router-link :to="{name:'Home'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">首页</router-link>
 
-            <router-link :to="{name:'H5Tab'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">大前端</router-link>
+            <router-link :to="{name:'H5Tab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">大前端</router-link>
 
-            <router-link :to="{name:'OOTab'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">后端</router-link>
+            <router-link :to="{name:'OOTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">后端</router-link>
 
-            <router-link :to="{name:'ServerTab'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务器</router-link>
+            <router-link :to="{name:'ServerTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务器</router-link>
 
-            <router-link :to="{name:'TakeNotesTab'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">随心笔记</router-link>
+            <router-link :to="{name:'TakeNotesTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">随心笔记</router-link>
 
-            <router-link :to="{name:'DevelopmentPlatformTab'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">开放平台
+            <router-link :to="{name:'DevelopmentPlatformTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">开放平台
+
               <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></router-link>
           </div>
         </div>

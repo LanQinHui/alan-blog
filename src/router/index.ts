@@ -6,6 +6,8 @@ const OOTab = () => import('@/views/OOTab/index.vue')
 const ServerTab = () => import('@/views/ServerTab/index.vue')
 const TakeNotesTab = () => import('@/views/TakeNotesTab/index.vue')
 const DevelopmentPlatformTab = () => import('@/views/DevelopmentPlatformTab/index.vue')
+const Detailspage = () => import('@/views/Detailspage/index.vue')
+
 
 const SignIn = () => import('@/views/Home/SignPage/sign_in.vue')
 const SignOut = () => import('@/views/Home/SignPage/sign_out.vue')
@@ -103,7 +105,17 @@ const routes: Array<RouteRecordRaw> = [
       requireAuth: true
     },
     component: SignUp
-  }
+  },
+  {
+    path: '/details',
+    name: 'Detailspage',
+    meta: {
+      title: '文章详情',
+      keepAlive: true,
+      requireAuth: true
+    },
+    component: Detailspage
+  },
 ];
 
 const router = createRouter({
