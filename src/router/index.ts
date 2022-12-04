@@ -9,6 +9,12 @@ const DevelopmentPlatformTab = () => import('@/views/DevelopmentPlatformTab/inde
 const Detailspage = () => import('@/views/Detailspage/index.vue')
 
 
+const SignIn = () => import('@/views/Home/SignPage/sign_in.vue')
+const SignOut = () => import('@/views/Home/SignPage/sign_out.vue')
+const SignUp = () => import('@/views/Home/SignPage/sign_up.vue')
+
+
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -70,7 +76,36 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: DevelopmentPlatformTab
   },
-  ,
+  {
+    path: '/SignIn',
+    name: 'SignIn',
+    meta: {
+      title: '登录',
+      keepAlive: true,
+      requireAuth: true
+    },
+    component: SignIn
+  },
+  {
+    path: '/SignOut',
+    name: 'SignOut',
+    meta: {
+      title: '登出',
+      keepAlive: true,
+      requireAuth: true
+    },
+    component: SignOut
+  },
+  {
+    path: '/SignUp',
+    name: 'SignUp',
+    meta: {
+      title: '注册',
+      keepAlive: true,
+      requireAuth: true
+    },
+    component: SignUp
+  },
   {
     path: '/details',
     name: 'Detailspage',

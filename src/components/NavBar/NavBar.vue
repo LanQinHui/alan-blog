@@ -37,7 +37,6 @@
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <!-- <router-link :to="{name:'Home'}" active-class="bg-gray-900 text-white" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">首页</router-link> -->
             <router-link :to="{name:'Home'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">首页</router-link>
 
@@ -50,13 +49,12 @@
             <router-link :to="{name:'TakeNotesTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">随心笔记</router-link>
 
             <router-link :to="{name:'DevelopmentPlatformTab'}" active-class="bg-gray-900 text-white" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">开放平台
+
               <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></router-link>
           </div>
         </div>
       </div>
-      
-
-      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      <div class="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <button type="button" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
           <span class="sr-only">View notifications</span>
           <!-- Heroicon name: outline/bell -->
@@ -68,10 +66,20 @@
           </svg>
         </button>
 
+        
+        <button type="button" class="ml-5 px-6 py-1 items-center border border-gray-600 rounded-md text-sm text-white font-medium bg-gray-800 hover:text-gray-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true" @click="signIn">
+          登 录
+        </button>
+    
+        <button type="button" class="ml-2 px-6 py-1 items-center border border-gray-600 rounded-md text-sm text-white font-medium bg-gray-800 hover:text-gray-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true" @click="signUp">
+          注 册
+        </button>
+          
+
         <!-- Profile dropdown -->
         <div class="ml-3 relative">
-          <div>
-            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+          <div v-show=false>
+            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" @click.stop="userInfo=!userInfo">
               <span class="sr-only">Open user menu</span>
               <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
             </button>
@@ -87,7 +95,7 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-          <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+          <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" id="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" v-show="userInfo">
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
@@ -97,6 +105,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="sm:hidden" id="mobile-menu">
@@ -119,7 +128,38 @@
 </template>
 
 
-<script setup lang="ts">
+<script lang="ts">
+import { OnChange } from 'naive-ui/es/upload/src/interface'
+import router from '../../router'
+// export default defineComponent({name:'NavBar',component:{NavBarVue}})
+export default {
+  name:'NavBar',
+  data() {
+    return {
+      name: 'Vue.js',
+      userInfo: false
+    }
+  },
+  mounted() {
+    document.addEventListener('click',(e) => {
+      const userCon: HTMLElement = document.getElementById('menu') as HTMLElement;
+      if(userCon && !userCon.contains(<HTMLInputElement>e.target)){
+        this.userInfo = false;
+      }
+    })
+  },
+  methods: {
+    signIn() {
+      return router.push('/SignIn')
+    },
+    signUp() {
+      return router.push('/SignUp')
+      // 方法中的 `this` 指向当前活跃的组件实例
+      // alert(`Hello ${this.name}!`)
+      // `event` 是 DOM 原生事件
+    }
+  }
+}
 </script>
 
 <style scoped>

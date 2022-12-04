@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
     CommentBox: typeof import('./src/components/Comment/CommentBox.vue')['default']
     CommentItem: typeof import('./src/components/Comment/CommentItem.vue')['default']
     Content: typeof import('./src/components/Content/Content.vue')['default']
-    Detailspage: typeof import('./src/components/Detailspage/Detailspage.vue')['default']
     DividerHorizontal: typeof import('./src/components/Comment/DividerHorizontal.vue')['default']
     Footer: typeof import('./src/components/Footer/Footer.vue')['default']
     Header: typeof import('./src/components/Header/Header.vue')['default']
